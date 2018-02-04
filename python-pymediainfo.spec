@@ -36,6 +36,7 @@ BuildRequires:	python3-pytest-runner
 BuildRequires:	python3-setuptools
 %endif
 %endif
+Requires:	libmediainfo
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -45,6 +46,7 @@ This small package is a wrapper around the MediaInfo library.
 %package -n python3-%{pypi_name}
 Summary:	A Python wrapper for the mediainfo library
 Group:		Libraries/Python
+Requires:	libmediainfo
 
 %description -n python3-%{pypi_name}
 This small package is a wrapper around the MediaInfo library.
@@ -58,6 +60,7 @@ This small package is a wrapper around the MediaInfo library.
 %build
 %if %{with python2}
 %py_build %{?with_tests:test}
+
 %if %{with doc}
 # generate html docs
 sphinx-build docs html
@@ -68,6 +71,7 @@ sphinx-build docs html
 
 %if %{with python3}
 %py3_build %{?with_tests:test}
+
 %if %{with doc}
 # generate html docs
 python3-sphinx-build docs html
