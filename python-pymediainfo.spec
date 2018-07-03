@@ -11,7 +11,7 @@
 Summary:	A Python wrapper for the mediainfo library
 Name:		python-%{pypi_name}
 Version:	2.2.0
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries/Python
 Source0:	https://files.pythonhosted.org/packages/source/p/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
