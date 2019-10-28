@@ -9,32 +9,36 @@
 %define 	egg_name	pymediainfo
 %define		pypi_name	pymediainfo
 Summary:	A Python wrapper for the mediainfo library
+Summary(pl.UTF-8):	Pythonowy interfejs do biblioteki mediainfo
 Name:		python-%{pypi_name}
 Version:	2.2.0
 Release:	3
 License:	MIT
 Group:		Libraries/Python
-Source0:	https://files.pythonhosted.org/packages/source/p/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
+#Source0Download: https://pypi.org/simple/pymediainfo/
+Source0:	https://files.pythonhosted.org/packages/source/p/pymediainfo/%{pypi_name}-%{version}.tar.gz
 # Source0-md5:	66602dc7015648e7735a2abae346deea
 URL:		https://github.com/sbraz/pymediainfo
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
 %if %{with python2}
 BuildRequires:	python-devel
+BuildRequires:	python2-setuptools
 %if %{with tests}
 BuildRequires:	python2-pytest
 BuildRequires:	python2-pytest-runner
-BuildRequires:	python2-setuptools
-BuildRequires:	python2-sphinx
 %endif
 %endif
 %if %{with python3}
 BuildRequires:	python3-devel
+BuildRequires:	python3-setuptools
 %if %{with tests}
 BuildRequires:	python3-pytest
 BuildRequires:	python3-pytest-runner
-BuildRequires:	python3-setuptools
 %endif
+%endif
+%if %{with doc}
+BuildRequires:	sphinx-pdg
 %endif
 Requires:	libmediainfo
 BuildArch:	noarch
@@ -43,13 +47,20 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 This small package is a wrapper around the MediaInfo library.
 
+%description -l pl.UTF-8
+Mały pakiet obudowujący bibliotekę MediaInfo.
+
 %package -n python3-%{pypi_name}
 Summary:	A Python wrapper for the mediainfo library
+Summary(pl.UTF-8):	Pythonowy interfejs do biblioteki mediainfo
 Group:		Libraries/Python
 Requires:	libmediainfo
 
 %description -n python3-%{pypi_name}
 This small package is a wrapper around the MediaInfo library.
+
+%description -n python3-%{pypi_name} -l pl.UTF-8
+Mały pakiet obudowujący bibliotekę MediaInfo.
 
 %prep
 %setup -q -n %{pypi_name}-%{version}
