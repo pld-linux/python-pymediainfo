@@ -5,8 +5,8 @@
 %bcond_without	python2 # CPython 2.x module
 %bcond_without	python3 # CPython 3.x module
 
-%define 	module		pymediainfo
-%define 	egg_name	pymediainfo
+%define		module		pymediainfo
+%define		egg_name	pymediainfo
 %define		pypi_name	pymediainfo
 Summary:	A Python wrapper for the mediainfo library
 Summary(pl.UTF-8):	Pythonowy interfejs do biblioteki mediainfo
@@ -23,10 +23,10 @@ BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
 %if %{with python2}
 BuildRequires:	python-devel
-BuildRequires:	python2-setuptools
+BuildRequires:	python-setuptools
 %if %{with tests}
-BuildRequires:	python2-pytest
-BuildRequires:	python2-pytest-runner
+BuildRequires:	python-pytest
+BuildRequires:	python-pytest-runner
 %endif
 %endif
 %if %{with python3}
