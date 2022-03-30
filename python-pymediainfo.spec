@@ -12,7 +12,7 @@ Summary:	A Python wrapper for the mediainfo library
 Summary(pl.UTF-8):	Pythonowy interfejs do biblioteki mediainfo
 Name:		python-%{pypi_name}
 Version:	2.2.0
-Release:	6
+Release:	7
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/pymediainfo/
